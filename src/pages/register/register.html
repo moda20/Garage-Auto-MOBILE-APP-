@@ -1,0 +1,84 @@
+<!--
+  Generated template for the RegisterPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <button menuToggle="" ion-button="">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Nouvel utilisateur</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <img *ngIf="EditUser" src="{{IP}}AppBundle/Images/{{EditUser[0].photo}}">
+    <form #regForm="ngForm" (submit)="NewUser(regForm.value)">
+        <ion-list>
+          <ion-item>
+            <ion-label floating>* UserName
+              <ion-icon name="key"></ion-icon></ion-label>
+
+            <ion-input type="text" name="UserName" required="true" [(ngModel)]="UserName" (ngModelChange)="UserName = $event"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label floating>* Password
+              <ion-icon name="key"></ion-icon></ion-label>
+
+            <ion-input type="password" name="Password" required="true" [(ngModel)]="Password" (ngModelChange)="Password = $event"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label floating>* Nom
+              <ion-icon name="contact"></ion-icon></ion-label>
+
+            <ion-input type="text" name="Name" required="true" [(ngModel)]="Nom" (ngModelChange)="Nom = $event"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label floating>* Prenom
+              <ion-icon name="contact"></ion-icon></ion-label>
+
+            <ion-input type="text" name="Prenom" required="true" [(ngModel)]="Prenom" (ngModelChange)="Prenom = $event"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label floating>* Email
+              <ion-icon name="mail"></ion-icon></ion-label>
+
+            <ion-input type="email" name="Email" required="true" [(ngModel)]="Email" (ngModelChange)="Email = $event"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label floating>* Numéro téléphone
+              <ion-icon name="call"></ion-icon></ion-label>
+
+            <ion-input type="text" name="Tel" required="true" [(ngModel)]="TEL" (ngModelChange)="TEL = $event"></ion-input>
+          </ion-item>
+          <input (change)="handleFileSelect($event)"  type="file" name="imagee" id="image" hidden />
+          <label padding="" ion-button="" for="image">Choisir une photo</label>
+          <input hidden name="image" type="text" [(ngModel)]="image">
+          <ion-item>
+            <ion-label floating>Ville
+              <ion-icon name="navigate"></ion-icon></ion-label>
+
+            <ion-input type="text" name="Ville" [(ngModel)]="Ville" (ngModelChange)="Ville = $event"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label floating>Pays
+              <ion-icon name="navigate"></ion-icon></ion-label>
+
+            <ion-input type="text" name="Pays" [(ngModel)]="Pays" (ngModelChange)="Pays = $event"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label floating>Code Postal
+              <ion-icon name="navigate"></ion-icon></ion-label>
+
+            <ion-input type="text" name="CodeP" [(ngModel)]="CP" (ngModelChange)="CP = $event"></ion-input>
+          </ion-item>
+          <ion-input name="id" [(ngModel)]="id" hidden></ion-input>
+        </ion-list>
+      <button type="submit" ion-button="">Enregistrer</button>
+    </form>
+</ion-content>

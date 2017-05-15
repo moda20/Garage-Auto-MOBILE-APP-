@@ -1,0 +1,48 @@
+<!--
+  Generated template for the ProfilePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <button menuToggle="" ion-button="">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Profile de {{user[0].nom}}</ion-title>
+    <ion-buttons end padding="">
+      <button ion-button="" (click)="goToEdit($event,user[0].id)" *ngIf="owner==true">
+        <ion-icon name="brush"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-card>
+    <img src="{{IP}}AppBundle/Images/{{user[0].photo}}"/>
+    <ion-card-content>
+      <ion-card-title>
+        {{user[0].nom}} {{user[0].prenom}}
+      </ion-card-title>
+      <ion-list>
+        <ion-list-header>Information Personnelles</ion-list-header>
+        <ion-item>
+         E_mail  : {{user[0].mail}}
+        </ion-item>
+        <ion-item>
+          Num Tel : {{user[0].numTel}}
+        </ion-item>
+        <ion-item>
+         Address : {{user[0].address}}
+        </ion-item>
+        <ion-item>
+          Ville, Pays : {{user[0].ville}}, {{user[0].pays}}
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

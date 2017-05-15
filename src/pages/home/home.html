@@ -1,0 +1,37 @@
+<!--
+  Generated template for the HomePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <button menuToggle="" ion-button="">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Toutes Les Annonces</ion-title>
+  </ion-navbar>
+  <ion-toolbar color = "secondary">
+<ion-searchbar placeholder="Chercher des annonces ..." (ionInput) ="SearchResults($event)">
+
+</ion-searchbar>
+  </ion-toolbar>
+
+</ion-header>
+<ion-content>
+  <ion-card *ngFor="let ticket of Tickets" (click)="CardTapped($event,ticket)">
+    <img src="{{IP}}/AppBundle/Images/{{ticket[2]}}"/>
+    <ion-card-content>
+      <ion-card-title>
+        {{ticket.nom}}
+      </ion-card-title>
+      <p>
+        {{ticket.Description ? ticket.Description : 'Pas de Description' }}
+      </p>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
+
+

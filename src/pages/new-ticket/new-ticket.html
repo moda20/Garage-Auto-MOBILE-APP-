@@ -1,0 +1,124 @@
+<!--
+  Generated template for the NewTicketPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <button menuToggle="" ion-button="">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title *ngIf="!ticket">Nouvelle Annonce</ion-title>
+    <ion-title *ngIf="ticket">{{Name}}</ion-title>
+
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <img *ngIf="ticket" src="{{IP}}AppBundle/Images/{{ticket[2]}}">
+  <form #newForm="ngForm" (submit)="validateticket(newForm.value)">
+    <ion-list>
+      <ion-item>
+        <ion-label floating>Nom de l'annonce
+          <ion-icon name="at"></ion-icon></ion-label>
+
+        <ion-input type="text" name="Name" [(ngModel)]="Name" required="true"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Nom de la Voiture
+          <ion-icon name="car"></ion-icon></ion-label>
+
+        <ion-input type="text" name="CarName" [(ngModel)]="CarName" required="true"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>* Modèle de la Voiture
+          <ion-icon name="car"></ion-icon></ion-label>
+
+        <ion-input type="text" name="CarModel" [(ngModel)]="CarModel" required="true"></ion-input>
+      </ion-item>
+      <input name="id" [(ngModel)]="id" type="text" hidden>
+      <ion-row no-padding="">
+      <ion-col>
+
+            <input (change)="handleFileSelect($event)"  type="file" name="imagee" id="image" hidden />
+            <label padding="" ion-button="" for="image">Choisir une photo</label>
+            <input hidden name="image" type="text" [(ngModel)]="image">
+        </ion-col>
+
+        <ion-col>
+          <ion-buttons>
+            <button ion-button="" (click)="takeAPicture()" icon-only="" type="button">
+              <ion-icon name="camera"></ion-icon>
+            </button>
+            <button ion-button="" *ngIf="image" icon-only=""  (click)="emptyPicture()" type="button">
+              <ion-icon name="close"></ion-icon>
+            </button>
+          </ion-buttons>
+        </ion-col>
+
+        </ion-row>
+<!--      <ion-item>
+        <ion-label floating>Constructeur
+          <ion-icon name="key"></ion-icon></ion-label>
+
+        <ion-input type="text" name="Manf" [(ngModel)]="Manf"></ion-input>
+      </ion-item>-->
+      <ion-item>
+        <ion-label floating>* Prix
+          <ion-icon name="bitcoin"></ion-icon></ion-label>
+
+        <ion-input type="text" name="Price" [(ngModel)]="Price" required="true"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>* Description
+          <ion-icon name="bitcoin"></ion-icon></ion-label>
+
+        <ion-input type="text" name="Description" [(ngModel)]="Description" required="true"></ion-input>
+      </ion-item>
+      <ion-list-header>Plus d'information</ion-list-header>
+      <ion-item>
+      <ion-label floating>Carburant
+        <ion-icon name="bitcoin"></ion-icon></ion-label>
+
+      <ion-input type="text" name="Carburant" [(ngModel)]="Carburant" value=""></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Conso Urbaine/ 100km
+          <ion-icon name="bitcoin"></ion-icon></ion-label>
+
+        <ion-input type="text" name="CU100" [(ngModel)]="CU100" value=" "></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Longeur de la voiture
+          <ion-icon name="bitcoin"></ion-icon></ion-label>
+
+        <ion-input type="text" name="Longeur" [(ngModel)]="Longeur" value=" "></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Maximum de Révision
+          <ion-icon name="bitcoin"></ion-icon></ion-label>
+
+        <ion-input type="text" name="MaxRev" [(ngModel)]="MaxRev" value=" "></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Puissance Fiscale
+          <ion-icon name="bitcoin"></ion-icon></ion-label>
+
+        <ion-input type="text" name="PF" [(ngModel)]="PF" value=" "></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Volume Réservoir
+          <ion-icon name="bitcoin"></ion-icon></ion-label>
+
+        <ion-input type="text" name="VolRev" [(ngModel)]="VolRev" value=" "></ion-input>
+      </ion-item>
+    </ion-list>
+
+    <button ion-button="" type="submit">Enregistrer</button>
+  </form>
+</ion-content>

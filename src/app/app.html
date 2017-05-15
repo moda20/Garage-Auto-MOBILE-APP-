@@ -1,0 +1,52 @@
+<ion-menu [content]="content">
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-title *ngIf="connectedUser">Bienvenu {{connectedUser[0].nom}}</ion-title>
+        <ion-title *ngIf="!connectedUser">Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-list>
+        <ion-list-header>Navigation</ion-list-header>
+        <button ion-item menuClose="" (click)="goHome()">
+            Acceuil
+          <ion-icon name="home"></ion-icon>
+        </button>
+        <button ion-item menuClose="" (click)="goprofile()" *ngIf="auth.authenticated()">
+            Profile
+            <ion-icon name="user"></ion-icon>
+        </button>
+        <button ion-item menuClose="" (click)="goMytickets()" *ngIf="auth.authenticated()">
+            Mes Annonces
+            <ion-icon name="home"></ion-icon>
+        </button>
+        <button ion-item menuClose="" (click)="goNewticket()" *ngIf="auth.authenticated()">
+            Nouvelle Annonce
+            <ion-icon name="home"></ion-icon>
+        </button>
+        <button  ion-item menuClose="" (click)="Disconnect()"  *ngIf="auth.authenticated()" >
+            Déconnexion
+            <ion-icon name="home"></ion-icon>
+        </button>
+        <button ion-item menuClose="" (click)="goDisconnect()"  *ngIf="!auth.authenticated()">
+            Connexion
+        </button>
+      <button ion-item menuClose="" (click)="goRegister()" *ngIf="!auth.authenticated()">
+        Nouvel Utilisateur
+        <ion-icon name="home"></ion-icon>
+      </button>
+      <ion-item>
+        <ion-label floating>IP ADDRESS
+          <ion-icon name="key"></ion-icon></ion-label>
+
+        <ion-input  type="text" name="IP" [(ngModel)]="IP" (change)="STORAGEIP($event)"></ion-input>
+      </ion-item>
+
+    </ion-list>
+  </ion-content>
+
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
