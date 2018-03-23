@@ -5,7 +5,7 @@ This is the base template for Ionic starter apps.
 
 ## Using this project
 
-Install the latest Ionic CLI:
+Install the latest Ionic CLI if you don't have it already:
 
 ```bash
 $ npm install -g ionic
@@ -14,7 +14,18 @@ $ npm install -g ionic
 Then run:
 
 ```bash
-$ ionic start myApp
+$ npm install
+$ ionic serve
 ```
+To build the app for android/ios : 
+
+```bash
+$ ionic cordova build android/ios
+```
+
+This app relise on the backend of this project : 
+https://github.com/moda20/PFA
+so it needs to be running before running this app
+
 
 More info on this can be found on the Ionic [Getting Started](http://ionicframework.com/docs/v2/getting-started/) page.
