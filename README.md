@@ -1,4 +1,8 @@
-Ionic App Base
+
+# Note : The App is using an outdated version of ionic and ionic-cli
+## Updgrading to recent versionsmay require changing some code to be able to run it on browser or device.
+
+Ionic App 
 =====================
 
 This is the base template for Ionic starter apps.
