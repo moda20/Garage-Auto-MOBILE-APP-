@@ -1,6 +1,6 @@
 
 # Note : The App is using an outdated version of ionic and ionic-cli
-## Updgrading to recent versionsmay require changing some code to be able to run it on browser or device.
+## Updgrading to recent versions may require changing some code to be able to run it on browser or device.
 
 Ionic App 
 =====================
